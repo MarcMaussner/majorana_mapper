@@ -48,7 +48,7 @@ To further enhance the efficiency of the `MajoranaMapper`, the following three s
 
 1. **Connectivity-Aware Cost Functions**: Incorporate hardware-specific coupling maps (e.g., ibm_brisbane) into the simulated annealing cost function. By penalizing Majorana images that lead to high-routing costs (SWAP gate overhead), the transpiled circuit depth can be drastically reduced.
 2. **Subspace-Optimized Mappings**: Instead of a global optimization for the entire Hamiltonian, tailor the mapping to the specific subspace spanned by the UCCSD excitations. Focusing the annealing on the most "expensive" excitation blocks can lead to localized gate reductions where they matter most.
-34.  **Clifford-assisted Pools**: Expand the pool of candidate Majorana operators to include images related by Clifford rotations. This allows the optimizer to find representations where large subsets of Hamiltonian terms commute, enabling more aggressive circuit compression and simultaneous measurements.
+3.  **Clifford-assisted Pools**: Expand the pool of candidate Majorana operators to include images related by Clifford rotations. This allows the optimizer to find representations where large subsets of Hamiltonian terms commute, enabling more aggressive circuit compression and simultaneous measurements.
 
 ## Advanced Strategy Benchmark Results
 
@@ -70,3 +70,13 @@ Comparison of Majorana strategies against traditional mappings for UCCSD Ansatz 
 - [2] Miller et al., "Bonsai algorithm: Grow your own fermion-to-qubit mappings," *PRX Quantum* 4, 030314 (2023).
 - [3] Miller et al., "Treespilation: Architecture- and state-optimised fermion-to-qubit mappings," *arXiv:2404.09849* (2024).
 - [4] Aguilar et al., "Full classification of Pauli Lie algebras," *arXiv:2407.03411* (2024).
+
+## Conclusion
+
+The benchmark results demonstrate that optimizing the Majorana mapping strategies can lead to significant reductions in quantum resource requirements. Specifically:
+
+-   **Subspace Optimization** proves to be the most effective for reducing gate counts in larger systems like H2O, achieving a CNOT count of 141 compared to 150 for Jordan-Wigner.
+-   **Connectivity-Aware Mapping** successfully incorporates hardware constraints without compromising the logical gate count, paving the way for more efficient execution on NISQ devices.
+-   **Clifford-assisted Pools** provide a robust fallback and exploration method, ensuring that the mapping search space is sufficiently traversed.
+
+Future work will focus on integrating these mapping strategies directly into the transpilation pipeline to further minimize swap overheads on specific quantum processor topologies.
