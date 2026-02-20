@@ -58,4 +58,4 @@ python benchmarks/transpilation_benchmark.py
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [BSD 2-Clause License](LICENSE).

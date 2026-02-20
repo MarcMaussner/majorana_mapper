@@ -3,6 +3,7 @@ name = "majorana-mapper"
 version = "0.1.0"
 description = "Research and development for Majorana Mapping"
 authors = ["Marc Maussner <marc.maussner@infoteam.de>"]
+license = "BSD-2-Clause"
 packages = [{include = "majorana_mapper", from = "src"}]
 
 [tool.poetry.dependencies]
