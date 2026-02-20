@@ -8,9 +8,7 @@ from qiskit_nature.second_q.circuit.library import UCCSD, HartreeFock
 from qiskit_nature.second_q.operators import FermionicOp
 from qiskit_algorithms import NumPyMinimumEigensolver
 
-# Add src to path to import MajoranaMapper
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.majorana_mapper import MajoranaMapper, set_n
+from majorana_mapper.majorana_mapper import MajoranaMapper, set_n
 
 def get_h2_fallback():
     # H2 (STO-3G, 0.735A) - 4 spin orbitals

@@ -9,9 +9,7 @@ from qiskit_algorithms import NumPyMinimumEigensolver
 from qiskit_ibm_runtime.fake_provider import FakeBrisbane
 from qiskit.transpiler import CouplingMap
 
-# Add src to path to import MajoranaMapper
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.majorana_mapper import MajoranaMapper, set_n
+from majorana_mapper.majorana_mapper import MajoranaMapper, set_n
 
 def get_h2_fallback():
     h2_op = FermionicOp({
