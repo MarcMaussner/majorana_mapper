@@ -1,0 +1,143 @@
+﻿
+==================== Benchmarking H2 ====================
+  Testing Jordan-Wigner...
+  Testing Bravyi-Kitaev...
+  Testing Maj-Baseline...
+python : Traceback 
+(most recent call 
+last):
+In Zeile:1 Zeichen:1
++ python 
+benchmark_advanced.py 
+> benchmark_advanced_r
+esults.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Traceback    
+ (most recent call    
+ last)::String) [    
+], RemoteExceptio    n
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+  File "C:\Daten\Proje
+kte\Weiterbildung\Quan
+tum_Computing\2026_Maj
+oranaMapper\work\pytho
+n\benchmark\benchmark_
+advanced.py", line 
+116, in <module>
+    main()
+  File "C:\Daten\Proje
+kte\Weiterbildung\Quan
+tum_Computing\2026_Maj
+oranaMapper\work\pytho
+n\benchmark\benchmark_
+advanced.py", line 
+106, in main
+    all_res = {name: b
+enchmark_molecule(name
+, getter) for name, 
+getter in 
+molecules.items()}
+  File "C:\Daten\Proje
+kte\Weiterbildung\Quan
+tum_Computing\2026_Maj
+oranaMapper\work\pytho
+n\benchmark\benchmark_
+advanced.py", line 
+106, in <dictcomp>
+    all_res = {name: b
+enchmark_molecule(name
+, getter) for name, 
+getter in 
+molecules.items()}
+  File "C:\Daten\Proje
+kte\Weiterbildung\Quan
+tum_Computing\2026_Maj
+oranaMapper\work\pytho
+n\benchmark\benchmark_
+advanced.py", line 
+100, in 
+benchmark_molecule
+    results.append(ana
+lyze_mapping(mapper, 
+name, ham, n_s, n_p))
+  File "C:\Daten\Proje
+kte\Weiterbildung\Quan
+tum_Computing\2026_Maj
+oranaMapper\work\pytho
+n\benchmark\benchmark_
+advanced.py", line 
+51, in analyze_mapping
+    qubit_op = mapper.
+map(hamiltonian)
+  File "C:\Users\mauss
+ner\AppData\Local\Prog
+rams\Python\Python310\
+lib\site-packages\qisk
+it_nature\second_q\map
+pers\fermionic_mapper.
+py", line 33, in map
+    return super().map
+(second_q_ops, registe
+r_length=register_leng
+th)
+  File "C:\Users\mauss
+ner\AppData\Local\Prog
+rams\Python\Python310\
+lib\site-packages\qisk
+it_nature\second_q\map
+pers\qubit_mapper.py",
+ line 165, in map
+    qubit_ops[name] = 
+self._map_single(secon
+d_q_op, register_lengt
+h=register_length)
+  File "C:\Users\mauss
+ner\AppData\Local\Prog
+rams\Python\Python310\
+lib\site-packages\qisk
+it_nature\second_q\map
+pers\qubit_mapper.py",
+ line 140, in 
+_map_single
+    return self.mode_b
+ased_mapping(second_q_
+op, register_length=re
+gister_length)
+  File "C:\Users\mauss
+ner\AppData\Local\Prog
+rams\Python\Python310\
+lib\site-packages\qisk
+it_nature\second_q\map
+pers\qubit_mapper.py",
+ line 247, in 
+mode_based_mapping
+    
+times_creation_op, 
+times_annihilation_op 
+= cls.sparse_pauli_ope
+rators(register_length
+)
+  File "C:\Users\mauss
+ner\AppData\Local\Prog
+rams\Python\Python310\
+lib\site-packages\qisk
+it_nature\second_q\map
+pers\qubit_mapper.py",
+ line 208, in 
+sparse_pauli_operators
+    for paulis in cls.
+pauli_table(register_l
+ength):
+TypeError: MajoranaMap
+per.pauli_table() 
+missing 1 required 
+positional argument: 
+'register_length'

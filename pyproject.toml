@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "majorana-mapper"
+version = "0.1.0"
+description = "Research and development for Majorana Mapping"
+authors = ["Marc Maussner <marc.maussner@infoteam.de>"]
+packages = [{include = "majorana_mapper", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.24.0"
+qiskit = "^0.44.0"
+matplotlib = "^3.7.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+ruff = "^0.0.285"
+mypy = "^1.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
