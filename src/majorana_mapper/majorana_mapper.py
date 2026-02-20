@@ -34,12 +34,18 @@ class MajoranaMapper(FermionicMapper):
         self.strategy = strategy
         self.coupling_map = coupling_map
         self.hamiltonian = hamiltonian
+        self._cached_table = None
+        self._cached_n = None
 
     def pauli_table(self, register_length: int) -> list[tuple[Pauli, Pauli]]:
         """Instance method to allow per-instance strategies."""
         N = obtain_n() or register_length
-        print(f"Num qubits: {N}, Strategy: {self.strategy}")
+        
+        # Check cache
+        if self._cached_table is not None and self._cached_n == N:
+            return self._cached_table
 
+        print(f"Num qubits: {N}, Strategy: {self.strategy}")
         x, z, _ = bk_majoranas(N)
         
         energy_fn = quadratic_term_mean_weight
@@ -75,6 +81,9 @@ class MajoranaMapper(FermionicMapper):
             p2.phase = 0
             pauli_table.append((p1, p2))
             
+        # Store in cache
+        self._cached_table = pauli_table
+        self._cached_n = N
         return pauli_table
 
     # Override internal methods to use instance's pauli_table

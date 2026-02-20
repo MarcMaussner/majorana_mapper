@@ -53,14 +53,21 @@ cover/
 # VS Code
 .vscode/
 
-# LaTeX
+# LaTeX (Allow main.pdf, ignore build artifacts)
 *.aux
 *.fdb_latexmk
 *.fls
 *.log
 *.out
-*.pdf
 *.synctex.gz
+*.bbl
+*.blg
 
-# Documentation
-docs/
+# Temporary logs
+poc_output_*.txt
+status.txt
+
+# Keep docs
+!docs/
+!docs/**
+!*.pdf
