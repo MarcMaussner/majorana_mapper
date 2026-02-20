@@ -61,3 +61,6 @@ cover/
 *.out
 *.pdf
 *.synctex.gz
+
+# Documentation
+docs/
