@@ -53,7 +53,7 @@ cover/
 # VS Code
 .vscode/
 
-# LaTeX (Allow main.pdf, ignore build artifacts)
+# LaTeX
 *.aux
 *.fdb_latexmk
 *.fls
@@ -62,12 +62,13 @@ cover/
 *.synctex.gz
 *.bbl
 *.blg
+*.tex
+*.pdf
 
 # Temporary logs
 poc_output_*.txt
 status.txt
 
-# Keep docs
+# Keep docs directory structure but ignore specific file types
 !docs/
 !docs/**
-!*.pdf
